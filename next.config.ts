@@ -33,7 +33,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://srv.leafmc.cc:8000 https://api.mcsrvstat.us",
+      "connect-src 'self' https://srv.leafmc.cc:8000 https://api.mcsrvstat.us https://va.vercel-scripts.com",
       "frame-ancestors 'none'",
     ].join("; "),
   }

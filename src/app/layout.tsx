@@ -4,6 +4,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Navbar } from "../components/common/navbar";
 import { SmoothScroll } from "@/components/common/smooth-scroll";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 import { Footer } from "../components/common/footer";
@@ -112,6 +113,7 @@ export default function RootLayout({
               <Footer />
             </SmoothScroll>
           </ThemeProvider>
+          <Analytics />
         </body>
       </html>
     </ViewTransitions>
