@@ -1,0 +1,11 @@
+/* TEAM */
+Developer & Producer: lenvx
+Site: https://lenvx.dev
+Contact: hello [at] lenvx [dot] dev
+Location: Online
+
+/* SITE */
+Last update: 2026-04-06
+Language: English
+Standards: HTML5, CSS3, TypeScript
+Components: Next.js, Tailwind CSS, shadcn/ui

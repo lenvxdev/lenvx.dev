@@ -1,0 +1,114 @@
+import Container from "@/components/common/container";
+import { ImageComponent } from "@/components/common/image";
+import { TextScroll } from "@/components/ui/text-scroll";
+import { Book, Newspaper } from "lucide-react";
+import { Metadata } from "next";
+import BlogBanner from "@/assets/img/blogbanner.gif";
+import type { WebPage, WithContext } from "schema-dts";
+import { getPosts } from "@/lib/fs/posts";
+import { PostList } from "@/components/blog/post-list";
+import { SearchBar } from "@/components/blog/search-bar";
+import { BlogContextWrapper } from "@/components/blog/blog-context";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Articles and thoughts by lenvx on web development, tools, and more.",
+  openGraph: {
+    title: "Blog",
+    description: "Articles and thoughts by lenvx on web development, tools, and more.",
+  },
+};
+
+export default function Blog() {
+  const posts = getPosts();
+
+  const jsonLd: WithContext<WebPage> = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Blog",
+    alternateName: "lenvx.dev | Blog",
+    mainEntityOfPage: "/blog",
+    description: "Articles and thoughts by lenvx on web development, tools, and more.",
+    url: "/blog",
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About",
+          item: "/about",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Blog",
+          item: "/blog",
+        },
+      ],
+    },
+  };
+
+  return (
+    <>
+      <Container>
+        <div className="relative rounded-lg overflow-clip">
+          <ImageComponent
+            img={BlogBanner}
+            alt="Awoo"
+            className="w-full relative max-h-96 z-10 rounded-lg"
+            innerClassName="md:-translate-y-8"
+            height={720}
+            priority={true}
+          />
+          <p className="z-20 md:w-fit w-3/4 text-center font-bold absolute bottom-3 left-1/2 rounded-full -translate-x-1/2 px-7 py-3 font-doto bg-background/80 text-foreground md:text-xl backdrop-blur-lg">
+            ALL POSTS
+          </p>
+        </div>
+        <div className="w-full bg-background rounded-lg border border-border">
+          <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
+            <Book className="size-4" />
+            <span className="text-sm font-mono">DETAILS.md</span>
+          </h2>
+          <p className="px-5 py-3">
+            I write about things I find interesting, mostly web development, tooling, and productivity. You may also find posts about music production, project breakdowns, and random thoughts. This is where I think out loud.
+          </p>
+          <p className="px-5 pb-3 font-semibold">
+            This section is growing little by little as I continue building and learning.
+          </p>
+        </div>
+
+        <BlogContextWrapper initialPosts={posts}>
+          <div className="w-full bg-background rounded-lg border border-border flex flex-col overflow-hidden">
+            <div className="w-full flex flex-col md:flex-row md:items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 sticky top-0 z-30">
+              <div className="flex items-center gap-3">
+                <Newspaper className="size-4" />
+                <span className="text-sm font-mono">ALL_POSTS.md</span>
+              </div>
+
+              <SearchBar />
+            </div>
+
+            <PostList />
+          </div>
+        </BlogContextWrapper>
+      </Container>
+      <TextScroll
+        className="text-5xl md:text-7xl text-muted-foreground/50 dark:font-semibold font-bold py-24 md:space-y-2"
+        textClassName="py-1 md:py-3 font-doto"
+        default_velocity={0.66}
+        text="NOTES, FIXES, AND OTHER HALF-BREWED IDEAS.  "
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
+  );
+}

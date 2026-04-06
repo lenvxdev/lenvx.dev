@@ -1,5 +1,7 @@
-# [Lenvx.dev](https://lenvx.dev/)
+## lenvx-dev
 
-> yes, another personal website that i'll actually work on.
+Always a WIP. ;D
 
-:D (TBD)
+### Copyright
+
+Licensed in RCCL.
