@@ -66,31 +66,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      {
-        source: "/gh",
-        destination: "https://github.com/lenvxdev",
-        permanent: false,
-      },
-      {
-        source: "/gh/:path*",
-        destination: "https://github.com/lenvxdev/:path*",
-        permanent: false,
-      },
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.lenvx.dev",
-          },
-        ],
-        destination: "https://lenvx.dev/:path*",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;
