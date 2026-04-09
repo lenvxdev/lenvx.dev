@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: "Lenvx.dev",
     template: "%s | Lenvx.dev",
   },
-  description: "Personal portfolio of Lenvx — a developer and producer from Lithuania building fast, minimal, and secure web applications.",
+  description: "Personal portfolio of Lenvx, a developer and producer from Lithuania building fast, minimal, and secure web applications.",
   metadataBase: new URL(
     process.env.NODE_ENV === "production"
       ? "https://lenvx.dev"
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       default: "Lenvx.dev",
       template: "%s | Lenvx.dev",
     },
-    description: "Personal portfolio of Lenvx — a developer and producer from Lithuania building fast, minimal, and secure web applications.",
+    description: "Personal portfolio of Lenvx, a developer and producer from Lithuania building fast, minimal, and secure web applications.",
     type: "website",
     locale: "en_US",
     url: "https://lenvx.dev",
@@ -70,7 +70,11 @@ export const metadata: Metadata = {
   },
   icons: {
     apple: "/apple-touch-icon.png",
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
   },
   manifest: "/site.webmanifest",
 };

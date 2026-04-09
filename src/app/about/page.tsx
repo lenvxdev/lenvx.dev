@@ -9,11 +9,11 @@ import type { WebPage, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn more about lenvx — a developer and music producer from Lithuania focused on fast, minimal, and secure web applications.",
+  description: "Learn more about lenvx, a developer and music producer from Lithuania focused on fast, minimal, and secure web applications.",
   alternates: { canonical: "https://lenvx.dev/about" },
   openGraph: {
     title: "About",
-    description: "Learn more about lenvx — a developer and music producer from Lithuania focused on fast, minimal, and secure web applications.",
+    description: "Learn more about lenvx, a developer and music producer from Lithuania focused on fast, minimal, and secure web applications.",
     url: "https://lenvx.dev/about",
   },
 };

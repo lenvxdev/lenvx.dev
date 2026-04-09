@@ -54,10 +54,7 @@ export function FAB() {
   };
 
   const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -66,8 +63,7 @@ export function FAB() {
     const trackScroll = () => {
       cancelAnimationFrame(frameId);
       frameId = requestAnimationFrame(() => {
-        const nextVisible = window.scrollY > 10;
-        setIsVisible((current) => (current === nextVisible ? current : nextVisible));
+        setIsVisible(window.scrollY > 10);
       });
     };
 
@@ -89,36 +85,38 @@ export function FAB() {
           "text-foreground hover:text-secondary-foreground cursor-pointer",
           "border border-border transition-all outline-0 focus-visible:ring-2 focus-visible:ring-primary/50",
           isVisible ? "opacity-100" : "opacity-0",
-          open
-            ? "translate-y-15 -translate-x-15"
-            : "translate-y-0 translate-x-0",
+          open ? "translate-y-15 -translate-x-15" : "translate-y-0 translate-x-0",
         )}
         onClick={handleScrollToTop}
       >
         <ArrowUp className="size-6" />
         <span className="sr-only">Scroll to top</span>
       </button>
+
       <Popover onOpenChange={handleOpen}>
-        <PopoverTrigger asChild>
-          <button
-            className={cn(
-              "fixed bottom-5 md:bottom-10 flex items-center justify-center",
-              "right-5 z-50 md:right-10 p-3 bg-background hover:bg-secondary rounded-lg",
-              "text-foreground hover:text-secondary-foreground cursor-pointer",
-              "border border-border transition-colors outline-0 focus-visible:ring-2 focus-visible:ring-primary/50",
-            )}
-            aria-expanded={open}
-            aria-haspopup="menu"
-          >
-            <X
+        <div className="fixed bottom-5 md:bottom-10 right-5 md:right-10 z-50">
+          <PopoverTrigger asChild>
+            <button
               className={cn(
-                "size-6 transition-transform",
-                open ? "rotate-0" : "rotate-45",
+                "flex items-center justify-center",
+                "p-3 bg-background hover:bg-secondary rounded-lg",
+                "text-foreground hover:text-secondary-foreground cursor-pointer",
+                "border border-border transition-colors outline-0 focus-visible:ring-2 focus-visible:ring-primary/50",
               )}
-            />
-            <span className="sr-only">Open FAB menu</span>
-          </button>
-        </PopoverTrigger>
+              aria-expanded={open}
+              aria-haspopup="menu"
+            >
+              <X
+                className={cn(
+                  "size-6 transition-transform",
+                  open ? "rotate-0" : "rotate-45",
+                )}
+              />
+              <span className="sr-only">Open FAB menu</span>
+            </button>
+          </PopoverTrigger>
+        </div>
+
         <PopoverContent
           onInteractOutside={handleInteractOutside}
           className="max-w-3xs sm:max-w-xs md:max-w-sm w-full p-0 overflow-clip"

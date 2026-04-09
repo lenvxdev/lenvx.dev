@@ -65,16 +65,8 @@ export function Hero({ img, profile }: HeroProps) {
       </div>
       <div className="relative w-full py-3 md:-mt-18 justify-center flex-col md:flex-row md:justify-between flex gap-3 md:gap-5 items-center">
         <div className="w-full md:pl-46">
-          <p className="group relative w-fit mx-auto md:mx-0 truncate text-2xl text-foreground font-bold dark:font-semibold">
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-red-500">
-              Lenvx
-            </span>
-            <span className="absolute left-0 top-0 text-cyan-400 opacity-0 group-hover:opacity-70 group-hover:translate-x-0.5 group-hover:translate-y-px transition-all duration-75 select-none -z-10">
-              Lenvx
-            </span>
-            <span className="absolute left-0 top-0 text-red-500 opacity-0 group-hover:opacity-70 group-hover:-translate-x-0.5 group-hover:-translate-y-px transition-all duration-75 select-none -z-10">
-              Lenvx
-            </span>
+          <p className="w-fit mx-auto md:mx-0 truncate text-2xl text-foreground font-bold dark:font-semibold">
+            Lenvx
           </p>
         </div>
         <div className="w-fit flex items-center justify-center gap-3">
