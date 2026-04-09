@@ -1,5 +1,3 @@
-
-
 import type { ComponentType, SVGProps } from "react";
 import { Link } from "next-view-transitions";
 import { GitHub } from "@/components/logos/github";

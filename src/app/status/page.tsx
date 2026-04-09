@@ -9,10 +9,12 @@ import type { WebPage, WithContext } from "schema-dts";
 
 export const metadata: Metadata = {
   title: "Server Status",
-  description: "See the server status!",
+  description: "Live server metrics and Minecraft server status for lenvx.dev services.",
+  alternates: { canonical: "https://lenvx.dev/status" },
   openGraph: {
     title: "Server Status",
-    description: "See the server status!",
+    description: "Live server metrics and Minecraft server status for lenvx.dev services.",
+    url: "https://lenvx.dev/status",
   },
 };
 
@@ -39,12 +41,6 @@ export default function Status() {
           position: 2,
           name: "Server Status",
           item: "/status",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Blog",
-          item: "/blog",
         },
       ],
     },

@@ -15,7 +15,7 @@ export function PerformanceModeToggle() {
             Performance Mode
           </p>
           <p>
-            Turn off unneccessary effects to improve performance on lower-end
+            Turn off unnecessary effects to improve performance on lower-end
             devices.
           </p>
         </div>

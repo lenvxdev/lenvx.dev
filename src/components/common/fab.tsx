@@ -18,10 +18,6 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Link } from "next-view-transitions";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import Image from "next/image";
-import Hero from "@/assets/img/banner.gif";
-import performanceModeAtom from "@/lib/atoms/performance-mode";
-import { useAtom } from "jotai";
 
 interface NavItem {
   href: string;
@@ -44,8 +40,6 @@ const externalItems: NavItem[] = [
 export function FAB() {
   const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isImageLoading, setIsImageLoading] = useState(true);
-  const [performanceMode] = useAtom(performanceModeAtom);
 
   const handleInteractOutside = (e: Event) => {
     e.preventDefault();
@@ -131,18 +125,6 @@ export function FAB() {
           align="end"
           sideOffset={10}
         >
-          <div className="h-auto overflow-clip w-full border-b border-border">
-            <Image
-              src={Hero}
-              height={120}
-              unoptimized
-              alt="FAB Hero Image"
-              onLoad={() => setIsImageLoading(false)}
-              className={`${
-                isImageLoading && !performanceMode ? "blur" : "remove-blur"
-              } transition-all ease-[cubic-bezier(0.22,1,0.36,1)] duration-500`}
-            />
-          </div>
           <h3 className="w-full flex items-center gap-3 bg-muted/20 px-4 py-2 border-b border-border font-bold">
             <span className="size-fit px-2 py-1 rounded-3xl bg-secondary text-secondary-foreground">
               <GitGraph className="size-4" />

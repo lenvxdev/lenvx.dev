@@ -13,10 +13,12 @@ import { LeafMCBlock } from "@/components/home/leafmc-card";
 
 export const metadata: Metadata = {
   title: "Lenvx | Developer & Producer",
-  description: "Personal portfolio of Lenvx, a 15-year-old producer and developer from lenvx.dev.",
+  description: "Lenvx is a developer and producer from Lithuania. Explore projects, skills, and thoughts on web development and music production.",
+  alternates: { canonical: "https://lenvx.dev" },
   openGraph: {
     title: "Lenvx | Developer & Producer",
-    description: "Personal portfolio of Lenvx, a 15-year-old producer and developer from lenvx.dev.",
+    description: "Lenvx is a developer and producer from Lithuania. Explore projects, skills, and thoughts on web development and music production.",
+    url: "https://lenvx.dev",
   },
 };
 
@@ -42,7 +44,7 @@ export default function Home() {
             <span className="text-sm font-mono">DEFINITION.md</span>
           </h2>
           <div className="p-5">
-            <h1 className="text-2xl font-bold mb-4">Who is Lenvx?</h1>
+            <h2 className="text-2xl font-bold mb-4">Who is Lenvx?</h2>
             <p className="mb-4">
               I am a 15-year-old producer and developer based in Lithuania. I focus on building secure, lightweight, modern, and minimal applications using the best technology available.
             </p>

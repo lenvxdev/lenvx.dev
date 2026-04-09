@@ -61,7 +61,7 @@ export function LeafMCBlock() {
   return (
     <div className="p-5 flex flex-col md:flex-row items-center justify-between gap-5">
       <div>
-        <h1 className="text-2xl font-bold mb-2">Join LeafMC</h1>
+        <h2 className="text-2xl font-bold mb-2">Join LeafMC</h2>
         <p className="max-w-md text-muted-foreground">
           Built for performance and uniqueness. Join our community and
           experience Minecraft differently on{" "}

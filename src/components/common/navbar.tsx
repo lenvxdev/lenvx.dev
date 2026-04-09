@@ -5,9 +5,17 @@ import ThemeToggleButton from "@/components/ui/theme-toggle-button";
 import { Link } from "next-view-transitions";
 import performanceModeAtom from "@/lib/atoms/performance-mode";
 import { useAtom } from "jotai";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+];
 
 export function Navbar() {
   const [performanceMode] = useAtom(performanceModeAtom);
+  const pathname = usePathname();
 
   return (
     <header
@@ -24,13 +32,29 @@ export function Navbar() {
             <ProgressiveBlur className="z-10" height="170%" position="top" />
           </>
         )}
-        <nav className="relative z-50 w-full max-w-6xl mx-auto px-5 py-3 flex justify-between items-center">
+        <nav className="relative z-50 w-full max-w-6xl mx-auto px-5 py-3 flex justify-between items-center gap-4">
           <Link
             href="/"
-            className="text-xl font-bold dark:font-medium text-primary"
+            className="text-xl font-bold dark:font-medium text-primary shrink-0"
           >
             lenvx.dev
           </Link>
+          <div className="flex items-center gap-1 mr-auto">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "px-3 py-1.5 rounded-md text-sm font-medium transition-colors",
+                  pathname === link.href || pathname.startsWith(link.href + "/")
+                    ? "text-foreground bg-secondary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60",
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
           <ThemeToggleButton variant="circle-blur" start="top-right" />
         </nav>
       </section>

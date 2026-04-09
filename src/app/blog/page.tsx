@@ -12,10 +12,12 @@ import { BlogContextWrapper } from "@/components/blog/blog-context";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Articles and thoughts by lenvx on web development, tools, and more.",
+  description: "Articles and thoughts by lenvx on web development, tooling, music production, and more.",
+  alternates: { canonical: "https://lenvx.dev/blog" },
   openGraph: {
     title: "Blog",
-    description: "Articles and thoughts by lenvx on web development, tools, and more.",
+    description: "Articles and thoughts by lenvx on web development, tooling, music production, and more.",
+    url: "https://lenvx.dev/blog",
   },
 };
 

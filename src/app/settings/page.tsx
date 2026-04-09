@@ -42,12 +42,6 @@ export default function SettingsPage() {
           name: "Settings",
           item: "/settings",
         },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Blog",
-          item: "/blog",
-        },
       ],
     },
   };

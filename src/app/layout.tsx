@@ -10,8 +10,6 @@ import "./globals.css";
 import { Footer } from "../components/common/footer";
 import { FAB } from "@/components/common/fab";
 
-import OgImage from "./opengraph-image.png";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
     default: "Lenvx.dev",
     template: "%s | Lenvx.dev",
   },
-  description: "Personal portfolio of Lenvx, a 15-year-old developer and producer.",
+  description: "Personal portfolio of Lenvx — a developer and producer from Lithuania building fast, minimal, and secure web applications.",
   metadataBase: new URL(
     process.env.NODE_ENV === "production"
       ? "https://lenvx.dev"
@@ -44,36 +42,31 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
+  authors: [{ name: "Lenvx", url: "https://lenvx.dev" }],
+  creator: "Lenvx",
+  keywords: ["lenvx", "developer", "producer", "portfolio", "Next.js", "TypeScript", "Lithuania", "web development"],
   openGraph: {
     title: {
       default: "Lenvx.dev",
       template: "%s | Lenvx.dev",
     },
-    images: [
-      {
-        url: OgImage.src,
-        width: OgImage.width,
-        height: OgImage.height,
-      },
-    ],
-    description: "Personal portfolio of Lenvx, a 15-year-old developer and producer.",
+    description: "Personal portfolio of Lenvx — a developer and producer from Lithuania building fast, minimal, and secure web applications.",
     type: "website",
     locale: "en_US",
     url: "https://lenvx.dev",
     siteName: "Lenvx.dev",
+    images: [{ url: "/twitter-image.png", width: 1200, height: 630, alt: "Lenvx.dev" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@lenvx",
     creator: "@lenvx",
-    images: [
-      {
-        url: OgImage.src,
-        width: OgImage.width,
-        height: OgImage.height,
-      },
-    ],
+    images: ["/twitter-image.png"],
   },
   icons: {
     apple: "/apple-touch-icon.png",

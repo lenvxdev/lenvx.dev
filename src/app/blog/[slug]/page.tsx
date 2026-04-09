@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { MDXRemote, type MDXRemoteOptions } from "next-mdx-remote-client/rsc";
 import { readingTime } from "reading-time-estimator";
 
@@ -23,7 +24,6 @@ import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TableOfContents } from "@/components/blog/table-of-contents";
 
-
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -39,6 +39,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: frontmatter.title ?? "Article",
+    description: frontmatter.description,
+    alternates: { canonical: `https://lenvx.dev/blog/${slug}` },
+    openGraph: {
+      title: frontmatter.title ?? "Article",
+      description: frontmatter.description,
+      url: `https://lenvx.dev/blog/${slug}`,
+      type: "article",
+    },
   };
 }
 
@@ -48,10 +56,11 @@ export default async function Post({ params }: Props) {
   const result = await getMarkdownFromSlug(slug);
 
   if (!result) {
-    return <p>Post not found</p>;
+    notFound();
   }
 
   const { source, format } = result;
+  const { frontmatter } = getFrontmatter<Frontmatter>(source);
 
   const prettyCodeOptions: Options = {
     keepBackground: false,
@@ -102,20 +111,16 @@ export default async function Post({ params }: Props) {
             </Link>
           </Button>
           <h1 className="text-4xl font-bold mb-4 text-center">
-            {getFrontmatter<Frontmatter>(source).frontmatter.title}
+            {frontmatter.title}
           </h1>
           <p className="text-muted-foreground mb-4 text-center">
-            {getFrontmatter<Frontmatter>(source).frontmatter.description}
+            {frontmatter.description}
           </p>
           <p className="text-sm text-muted-foreground mb-4 text-center">
             Published on{" "}
-            {new Date(
-              getFrontmatter<Frontmatter>(source).frontmatter.createdAt,
-            ).toLocaleDateString("en-GB")}{" "}
+            {new Date(frontmatter.createdAt).toLocaleDateString("en-GB")}{" "}
             | Last updated on{" "}
-            {new Date(
-              getFrontmatter<Frontmatter>(source).frontmatter.updatedAt,
-            ).toLocaleDateString("en-GB")}
+            {new Date(frontmatter.updatedAt).toLocaleDateString("en-GB")}
           </p>
           <article
             className={cn(
@@ -124,7 +129,6 @@ export default async function Post({ params }: Props) {
           >
             <MDXRemote source={source} options={options} />
           </article>
-
         </Container>
       </div>
       <TextScroll
