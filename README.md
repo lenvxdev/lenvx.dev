@@ -4,7 +4,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://lenvx.dev)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-AGPL%20v3-blue?style=flat-square)](LICENSE)
 
 Personal portfolio and blog of **lenvx**, a developer and producer from Lithuania.
 
@@ -70,4 +70,4 @@ You're welcome to fork this and use it as a base for your own portfolio. I only 
 
 ## License
 
-[MIT](LICENSE) - free to use, just give credit.
+[GNU Affero General Public License v3.0](LICENSE) - if you use, modify, or deploy this, you must open source your version under the same license and credit the original.
