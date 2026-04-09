@@ -40,8 +40,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   experimental: {
-    reactCompiler: true,
     webpackMemoryOptimizations: true,
     serverSourceMaps: false,
   },
