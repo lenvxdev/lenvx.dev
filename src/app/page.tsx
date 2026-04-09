@@ -174,7 +174,7 @@ export default function Home() {
           </h2>
           <div className="p-5 flex items-center gap-2 text-sm text-muted-foreground">
             <Calendar className="size-4" />
-            <p>Last updated: 2026-04-06</p>
+            <p>Last updated: 2026-04-10</p>
           </div>
         </div>
       </Container>
