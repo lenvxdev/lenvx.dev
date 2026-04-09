@@ -12,9 +12,12 @@ import { DarkModeAnimationToggle } from "@/components/settings/fade-dark-mode-to
 export const metadata: Metadata = {
   title: "Settings",
   description: "Configure the site to your liking.",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "https://lenvx.dev/settings" },
   openGraph: {
     title: "Settings",
     description: "Configure the site to your liking.",
+    url: "https://lenvx.dev/settings",
   },
 };
 

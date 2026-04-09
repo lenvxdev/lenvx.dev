@@ -6,7 +6,7 @@ import type { WebPage, WithContext } from "schema-dts";
 
 import HeroImage from "@/assets/img/banner.gif";
 import HeroProfile from "@/assets/img/pfp.jpg";
-import { Book, Code, HelpCircle, Info, Calendar, Gamepad2 } from "lucide-react";
+import { Book, Code, HelpCircle, Info, Calendar, Gamepad2, Mail } from "lucide-react";
 import { TextScroll } from "@/components/ui/text-scroll";
 import { RelationshipCounter } from "@/components/home/relationship-counter";
 import { LeafMCBlock } from "@/components/home/leafmc-card";
@@ -135,6 +135,39 @@ export default function Home() {
         </div>
 
         <div className="w-full bg-background rounded-lg border border-border mt-8">
+          <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
+            <Mail className="size-4" />
+            <span className="text-sm font-mono">CONTACT.md</span>
+          </h2>
+          <div className="p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-bold mb-1">Get in touch</h3>
+              <p className="text-sm text-muted-foreground">
+                Open to freelance work, collaborations, and interesting projects.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <a
+                href="https://t.me/lenvx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                Telegram
+              </a>
+              <a
+                href="https://github.com/lenvxdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-md border border-border text-sm font-medium hover:bg-secondary transition-colors"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full bg-background rounded-lg border border-border">
           <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
             <Info className="size-4" />
             <span className="text-sm font-mono">ABOUT_SITE.md</span>

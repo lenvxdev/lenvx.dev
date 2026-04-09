@@ -44,12 +44,6 @@ export default function Blog() {
         {
           "@type": "ListItem",
           position: 2,
-          name: "About",
-          item: "/about",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
           name: "Blog",
           item: "/blog",
         },

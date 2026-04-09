@@ -21,7 +21,6 @@ import { TextScroll } from "@/components/ui/text-scroll";
 import { Link } from "next-view-transitions";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { TableOfContents } from "@/components/blog/table-of-contents";
 
 type Props = {
@@ -122,11 +121,7 @@ export default async function Post({ params }: Props) {
             | Last updated on{" "}
             {new Date(frontmatter.updatedAt).toLocaleDateString("en-GB")}
           </p>
-          <article
-            className={cn(
-              "prose max-w-full dark:prose-invert prose-pre:font-mono prose-code:font-mono prose-headings:scroll-mt-24 pt-5",
-            )}
-          >
+          <article className="prose max-w-full dark:prose-invert prose-pre:font-mono prose-code:font-mono prose-headings:scroll-mt-24 pt-5">
             <MDXRemote source={source} options={options} />
           </article>
         </Container>

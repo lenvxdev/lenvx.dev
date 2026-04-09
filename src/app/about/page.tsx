@@ -42,12 +42,6 @@ export default function About() {
           name: "About",
           item: "/about",
         },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Blog",
-          item: "/blog",
-        },
       ],
     },
   };
@@ -102,7 +96,7 @@ export default function About() {
           <ImageComponent
             img={AboutBanner}
             alt="About Banner"
-            className="w-full relative max-h-96 z-10 rounded-lg"
+            className="w-full max-h-96 z-10 rounded-lg"
             height={720}
             priority={true}
           />
