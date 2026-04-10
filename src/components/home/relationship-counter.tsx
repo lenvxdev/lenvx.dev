@@ -22,7 +22,7 @@ export function RelationshipCounter() {
   }, []);
 
   return (
-    <div className="w-full relative overflow-clip bg-background rounded-lg border border-border mt-8 group h-48 flex flex-col items-center justify-center">
+    <div className="w-full relative overflow-clip bg-background rounded-lg border border-border group h-48 flex flex-col items-center justify-center">
       {/* Background Heart with Dotted Effect */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 group-hover:opacity-30 transition-opacity duration-1000">
         <div 

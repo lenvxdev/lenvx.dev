@@ -93,7 +93,7 @@ export default async function Post({ params }: Props) {
 
   return (
     <>
-      <div className="relative flex justify-center max-w-7xl mx-auto px-5 gap-10">
+      <div className="relative flex justify-center max-w-7xl mx-auto px-5 py-5 gap-10">
         <div className="hidden xl:block w-64 shrink-0">
           <div className="sticky top-24">
             <TableOfContents />
@@ -109,7 +109,7 @@ export default async function Post({ params }: Props) {
               Back to blog
             </Link>
           </Button>
-          <h1 className="text-4xl font-bold mb-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">
             {frontmatter.title}
           </h1>
           <p className="text-muted-foreground mb-4 text-center">
@@ -121,7 +121,7 @@ export default async function Post({ params }: Props) {
             | Last updated on{" "}
             {new Date(frontmatter.updatedAt).toLocaleDateString("en-GB")}
           </p>
-          <article className="prose max-w-full dark:prose-invert prose-pre:font-mono prose-code:font-mono prose-headings:scroll-mt-24 pt-5">
+          <article className="prose max-w-full dark:prose-invert prose-pre:font-mono prose-code:font-mono prose-headings:scroll-mt-24 prose-pre:overflow-x-auto pt-5">
             <MDXRemote source={source} options={options} />
           </article>
         </Container>

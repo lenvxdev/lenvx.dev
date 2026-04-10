@@ -38,7 +38,7 @@ export default function Home() {
       <Container>
         <Hero img={HeroImage} profile={HeroProfile} />
         
-        <div className="w-full bg-background rounded-lg border border-border mt-8">
+        <div className="w-full bg-background rounded-lg border border-border">
           <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
             <Book className="size-4" />
             <span className="text-sm font-mono">DEFINITION.md</span>
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full bg-background rounded-lg border border-border mt-8">
+        <div className="w-full bg-background rounded-lg border border-border">
           <h2 className="w-full flex items-center justify-between px-5 py-3 border-b border-border">
             <div className="flex items-center gap-3 text-muted-foreground">
               <Gamepad2 className="size-4" />
@@ -66,7 +66,7 @@ export default function Home() {
 
         <RelationshipCounter />
 
-        <div className="w-full bg-background rounded-lg border border-border mt-8">
+        <div className="w-full bg-background rounded-lg border border-border">
           <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
             <Code className="size-4" />
             <span className="text-sm font-mono">SKILLS.md</span>
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full bg-background rounded-lg border border-border mt-8">
+        <div className="w-full bg-background rounded-lg border border-border">
           <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
             <HelpCircle className="size-4" />
             <span className="text-sm font-mono">FAQ.md</span>
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full bg-background rounded-lg border border-border mt-8">
+        <div className="w-full bg-background rounded-lg border border-border">
           <h2 className="w-full flex items-center gap-3 text-muted-foreground px-5 py-3 border-b border-border">
             <Mail className="size-4" />
             <span className="text-sm font-mono">CONTACT.md</span>
